@@ -11,7 +11,6 @@ MYSQL_PORT=${MYSQL_PORT:-3308}
 # is the container running?
 container_exists=$(docker ps -a|grep ${MYSQL_CONTAINER})
 container_running=$(echo "${container_exists}"|grep Up)
-echo $container_running
 
 # create data directory if needed
 if ! [ -d "${MYSQL_DATA}" ]; then
