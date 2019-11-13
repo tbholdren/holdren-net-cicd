@@ -3,6 +3,8 @@
 # install the docker system
 # run as root
 
+APP_USERNAME=holdrennet
+
 if [ ! "$(command -v docker)" ]; then
     echo docker not found\; installing
 
@@ -27,9 +29,9 @@ if [ ! "$(command -v docker)" ]; then
 
 fi
 
-if ! getent group docker|grep &>/dev/null "\b$(logname)\b"; then
+if ! getent group docker|grep &>/dev/null "\b${APP_USERNAME}\b"; then
     echo $(logname) not in docker group\; adding
 
-    usermod -aG docker $(logname)
+    usermod -aG docker ${APP_USERNAME}
     newgrp docker
 fi
