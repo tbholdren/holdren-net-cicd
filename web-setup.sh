@@ -7,6 +7,6 @@ APP_HOME=$(getent passwd ${APP_USERNAME}|cut -d: -f6)
 # copy scripts from here to app user folder
 # we shouold be in the /tmp/git/holdren-net-cicd folder
 if [ ! -d "${APP_HOME}/holdren-net-cicd" ]; then
-    cp -Rv . ${APP_HOME}
+    cp -Rv . ${APP_HOME}/holdren-net-cicd
     chown -Rv ${APP_USERNAME}:${APP_GROUP} ${APP_HOME}/holdren-net-cicd
 fi
