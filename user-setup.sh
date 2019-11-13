@@ -11,5 +11,5 @@ fi
 
 if ! id "${APP_USERNAME}" > /dev/null 2>&1; then
     echo user ${APP_USERNAME} does not exist\; creating
-    useradd -g ${APP_GROUP} -m ${APP_USERNAME}
+    useradd -g ${APP_GROUP} -s /bin/bash -m ${APP_USERNAME}
 fi
