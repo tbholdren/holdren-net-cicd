@@ -6,6 +6,7 @@
 
 SWAPFILE=/swapfile
 SWAPSIZE=1048576
+
 if [ -z "$(swapon -s)" ]; then
     echo no swap detected
     if [ ! -f $SWAPFILE ]; then

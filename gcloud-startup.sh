@@ -12,7 +12,7 @@ mkdir -p git
 cd git
 
 # download our scripts
-if [ ! -d "holdren-net-cicd"]; then
+if [ ! -d "holdren-net-cicd" ]; then
     git clone https://github.com/tbholdren/holdren-net-cicd.git
 fi
 cd holdren-net-cicd
