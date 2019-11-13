@@ -30,7 +30,7 @@ if [ ! "$(command -v docker)" ]; then
 fi
 
 if ! getent group docker|grep &>/dev/null "\b${APP_USERNAME}\b"; then
-    echo $(logname) not in docker group\; adding
+    echo ${APP_USERNAME} not in docker group\; adding
 
     usermod -aG docker ${APP_USERNAME}
     newgrp docker
