@@ -9,5 +9,5 @@ bash user-setup.sh
 # install docker
 bash docker-setup.sh
 
-# now install apps
+# handoff to web installer
 bash web-setup.sh
