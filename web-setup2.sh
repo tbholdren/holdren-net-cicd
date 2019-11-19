@@ -5,12 +5,12 @@ pwd
 cd docker
 
 # clone credentials repository
-if [ ! -d "holdren-net-credentials" ]; then
-    echo cloning credentials repository
-    git clone https://github.com/tbholdren/holdren-net-credentials.git
+if [ ! -f "credentials.sh" ]; then
+    echo copying credentials
+    gsutil cp gs://holdren-net/credentials/credentials.sh .
 fi
 
-source holdren-net-credentials/credentials.sh
+source credentials.sh
 
 # setup docker networking
 bash holdren-net-setup.sh
