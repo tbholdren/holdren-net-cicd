@@ -17,3 +17,6 @@ bash holdren-net-setup.sh
 
 # install mysql
 bash mysql-run.sh
+
+# install php
+bash holdren-net-php-apache-run.sh
