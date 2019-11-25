@@ -18,5 +18,10 @@ bash holdren-net-setup.sh
 # install mysql
 bash mysql-run.sh
 
+# build docker container for php with mysql bindings
+cd holdren-net-php-apache
+bash build.sh
+cd ..
+
 # install php
 bash holdren-net-php-apache-run.sh
