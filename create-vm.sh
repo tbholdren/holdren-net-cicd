@@ -1,5 +1,7 @@
 #!/bin/bash
 
+IMAGE=debian-10-buster-v20191210
+
 # create instance and run gcloud-startup.sh afterwards
 gcloud beta compute --project=holdren-net \
   instances create holdren-net-web \
@@ -11,7 +13,7 @@ gcloud beta compute --project=holdren-net \
   --service-account=801849299465-compute@developer.gserviceaccount.com \
   --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
   --tags=http-server,https-server \
-  --image=debian-10-buster-v20191121 \
+  --image=$IMAGE \
   --image-project=debian-cloud \
   --boot-disk-size=10GB \
   --boot-disk-type=pd-standard \
