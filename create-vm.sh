@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE=debian-10-buster-v20191210
+IMAGE=debian-10-buster-v20200204
 
 # create instance and run gcloud-startup.sh afterwards
 gcloud beta compute --project=holdren-net \
