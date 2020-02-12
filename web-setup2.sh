@@ -1,5 +1,8 @@
 #!/bin/bash
 
+HTML_DIR=html
+HOLDREN_NET_WEB_DIR=holdren-net-web
+
 pwd
 
 cd docker
@@ -22,6 +25,14 @@ bash mysql-run.sh
 cd holdren-net-php-apache
 bash build.sh
 cd ..
+
+# create directory if it doesn't exist, set permissions
+mkdir -p $HTML_DIR
+
+# pull down html content
+if [ ! -d "$HOLDREN_NET_WEB_DIR" ]; then
+    git clone https://github.com/tbholdren/holdren-net-web.git
+fi
 
 # install php
 bash holdren-net-php-apache-run.sh

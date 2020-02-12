@@ -7,11 +7,7 @@ CONTAINER_NAME=holdren-net-php-apache
 TAG=${CONTAINER_NAME}
 APACHE_PORT=80
 HTML_DIR=html
-
-# create directory if it doesn't exist, set permissions
-mkdir -p $HTML_DIR
-chown ${APP_USERNAME}:${APP_GROUP} $HTML_DIR
-chmod 755 $HTML_DIR
+HOLDREN_NET_WEB_DIR=holdren-net-web
 
 container_exists=$(docker ps -a|grep ${CONTAINER_NAME})
 container_running=$(echo "${container_exists}"|grep Up)
@@ -22,7 +18,8 @@ if [ -z "${container_exists}" ]; then
     docker run -d -p ${APACHE_PORT}:80/tcp \
 	   --name ${CONTAINER_NAME} \
 	   --network ${NETWORK} \
-	   -v "$PWD/html:/var/www/html" \
+	   -v "$PWD/${HTML_DIR}:/var/www/html" \
+	   -v "$PWD/$HOLDREN_NET_WEB_DIR/${HTML_DIR}:/var/www/holdren-net" \
 	   ${TAG}
 fi
 
